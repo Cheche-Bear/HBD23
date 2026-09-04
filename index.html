@@ -1,0 +1,3881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Neo 💙</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Sriracha&family=Titan+One&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --navy: #061735;
+    --navy-2: #0b285d;
+    --blue: #1769e0;
+    --blue-2: #3f91ff;
+    --sky: #9ed5ff;
+    --pale: #edf7ff;
+    --white: #ffffff;
+    --gold: #ffd76a;
+    --pink: #ff9fca;
+
+    --text: #173153;
+    --muted: #71839d;
+
+    --shadow:
+        0 25px 70px rgba(7, 47, 105, .14);
+
+    --shadow-blue:
+        0 20px 55px rgba(23, 105, 224, .25);
+
+    --ease:
+        cubic-bezier(.22, 1, .36, 1);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-family:
+        "DM Sans",
+        "Poppins",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fbfdff 0%,
+            #f0f9ff 42%,
+            #ddecff 100%
+        );
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -10;
+}
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+}
+
+.glow.one {
+    width: 550px;
+    height: 550px;
+    left: -190px;
+    top: -170px;
+    background: rgba(83, 166, 255, .20);
+}
+
+.glow.two {
+    width: 550px;
+    height: 550px;
+    right: -200px;
+    bottom: -220px;
+    background: rgba(42, 119, 232, .17);
+}
+
+.glow.three {
+    width: 330px;
+    height: 330px;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,.8);
+    filter: blur(100px);
+}
+
+.background-dots {
+    position: absolute;
+    inset: 0;
+
+    opacity: .42;
+
+    background-image:
+        radial-gradient(
+            rgba(23,105,224,.16) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+}
+
+/* =========================================================
+   FLOATING DECOR
+========================================================= */
+
+.decor {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.decor span {
+    position: absolute;
+
+    color: rgba(23,105,224,.15);
+
+    font-size: 22px;
+
+    animation:
+        gentleFloat
+        9s
+        ease-in-out
+        infinite;
+}
+
+.decor span:nth-child(1) {
+    left: 8%;
+    top: 24%;
+}
+
+.decor span:nth-child(2) {
+    left: 16%;
+    top: 78%;
+    animation-delay: 2s;
+}
+
+.decor span:nth-child(3) {
+    right: 11%;
+    top: 19%;
+    animation-delay: 4s;
+}
+
+.decor span:nth-child(4) {
+    right: 17%;
+    bottom: 18%;
+    animation-delay: 1s;
+}
+
+.decor span:nth-child(5) {
+    left: 47%;
+    top: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes gentleFloat {
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(5deg);
+    }
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding:
+        22px
+        5vw
+        15px;
+
+    overflow: hidden;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 30;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--navy);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.brand-dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(23,105,224,.1);
+}
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-button {
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(23,105,224,.12);
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.75);
+
+    color: var(--blue);
+
+    backdrop-filter: blur(12px);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(20,75,140,.1);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.music-button:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+.music-button.playing i {
+    animation:
+        musicPulse
+        .8s
+        ease-in-out
+        infinite;
+}
+
+@keyframes musicPulse {
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: min(1180px, 100%);
+    flex: 1;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.03fr
+        .97fr;
+
+    align-items: center;
+
+    gap: clamp(35px, 6vw, 80px);
+
+    min-height: 0;
+
+    padding:
+        15px 0
+        10px;
+}
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.hero-copy {
+    position: relative;
+
+    text-align: left;
+
+    animation:
+        revealLeft
+        .9s
+        var(--ease)
+        both;
+}
+
+@keyframes revealLeft {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding:
+        8px 14px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid rgba(23,105,224,.12);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    color: var(--blue);
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .78rem;
+
+    box-shadow:
+        0 8px 25px
+        rgba(23,105,224,.06);
+}
+
+.kicker i {
+    color: var(--gold);
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero-title {
+    font-family:
+        "Titan One",
+        cursive;
+
+    font-weight: 400;
+
+    line-height: .88;
+
+    letter-spacing: -1px;
+}
+
+.hero-title .happy {
+    display: block;
+
+    font-size:
+        clamp(
+            4.2rem,
+            7.8vw,
+            7.3rem
+        );
+
+    color: var(--navy);
+}
+
+.hero-title .birthday {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size:
+        clamp(
+            3.6rem,
+            6.3vw,
+            6rem
+        );
+
+    background:
+        linear-gradient(
+            110deg,
+            #1769e0,
+            #4e9fff,
+            #8acaff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+/* =========================================================
+   TITLE LINE
+========================================================= */
+
+.title-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.title-line::before {
+    content: "";
+
+    width: 70px;
+    height: 3px;
+
+    border-radius: 99px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--sky)
+        );
+}
+
+.title-line span {
+    color: var(--gold);
+    font-size: 16px;
+}
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.hero-message {
+    max-width: 570px;
+
+    margin-top: 20px;
+
+    color: #607998;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            1.15rem,
+            1.8vw,
+            1.45rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.birthday-date {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin-top: 14px;
+
+    color: var(--navy-2);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.birthday-date i {
+    color: var(--gold);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions {
+    margin-top: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-wrap: nowrap;
+}
+
+/* =========================================================
+   LETTER BUTTON
+========================================================= */
+
+.letter-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    border: 0;
+    border-radius: 999px;
+
+    padding:
+        14px 21px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a3478,
+            #1769e0 65%,
+            #4d9fff
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 16px 35px
+        rgba(23,105,224,.25);
+
+    transition:
+        transform .25s var(--ease),
+        box-shadow .25s ease;
+}
+
+.letter-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 22px 45px
+        rgba(23,105,224,.34);
+}
+
+.letter-button:active {
+    transform: scale(.97);
+}
+
+.letter-button i {
+    transition:
+        transform .3s var(--ease);
+}
+
+.letter-button:hover i {
+    transform:
+        translateY(-2px)
+        rotate(-8deg);
+}
+
+/* =========================================================
+   CAKE ACTION
+========================================================= */
+
+.cake-action {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    cursor: pointer;
+}
+
+.cake-button {
+    position: relative;
+
+    width: 54px;
+    height: 54px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(23,105,224,.13);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.88);
+
+    color: var(--blue);
+
+    font-size: 1.65rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px
+        rgba(23,105,224,.14);
+
+    transition:
+        transform .3s var(--ease),
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.cake-button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border:
+        1.5px dashed
+        rgba(23,105,224,.28);
+
+    border-radius: 50%;
+
+    animation:
+        cakeRotate
+        7s
+        linear
+        infinite;
+}
+
+.cake-button::after {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    top: 3px;
+    right: 3px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255,215,106,.2);
+}
+
+.cake-button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.07);
+
+    background: white;
+
+    box-shadow:
+        0 18px 38px
+        rgba(23,105,224,.22);
+}
+
+@keyframes cakeRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cake-action-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.cake-action-title {
+    color: var(--navy);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+}
+
+.cake-action-small {
+    color: #8292a8;
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .62rem;
+}
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 0;
+    height: 100%;
+
+    max-height: 610px;
+
+    animation:
+        revealRight
+        1s
+        .15s
+        var(--ease)
+        both;
+}
+
+@keyframes revealRight {
+    from {
+        opacity: 0;
+        transform:
+            translateX(35px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+/* =========================================================
+   ORBIT
+========================================================= */
+
+.photo-orbit {
+    position: absolute;
+
+    width: min(440px, 38vw);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(80,163,255,.13),
+            transparent 68%
+        );
+}
+
+.photo-orbit::before {
+    content: "";
+
+    position: absolute;
+    inset: 22px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(23,105,224,.21);
+}
+
+/* =========================================================
+   PHOTO CARD
+========================================================= */
+
+.photo-card {
+    position: relative;
+    z-index: 3;
+
+    width: min(350px, 31vw);
+
+    padding:
+        14px
+        14px
+        21px;
+
+    border-radius: 31px;
+
+    background:
+        rgba(255,255,255,.87);
+
+    border:
+        1px solid
+        rgba(255,255,255,.95);
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(18px);
+
+    transform:
+        rotate(2deg);
+
+    transition:
+        transform .45s var(--ease),
+        box-shadow .45s ease;
+}
+
+.photo-card:hover {
+    transform:
+        rotate(0deg)
+        translateY(-7px);
+
+    box-shadow:
+        0 35px 80px
+        rgba(7,47,105,.2);
+}
+
+.photo-frame {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #cce8ff,
+            #edf8ff
+        );
+}
+
+.photo-frame::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.28),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: none !important;
+    animation: none !important;
+}
+
+.photo-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding:
+        14px 4px 0;
+}
+
+.photo-name {
+    color: var(--navy);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.photo-subtitle {
+    margin-top: 2px;
+
+    color: #8292a8;
+
+    font-size: .65rem;
+}
+
+.photo-heart {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #edf7ff;
+
+    color: var(--blue);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.photo-card:hover .photo-heart {
+    transform: scale(1.1);
+    background: #dcebff;
+}
+
+/* =========================================================
+   BALLOONS
+========================================================= */
+
+.balloon {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 92px;
+
+    filter:
+        drop-shadow(
+            0 15px 10px
+            rgba(5,45,100,.13)
+        );
+
+    animation:
+        balloonFloat
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+.balloon.left {
+    left: 0;
+    top: 13%;
+}
+
+.balloon.right {
+    right: 0;
+    top: 24%;
+    animation-delay: 1.3s;
+}
+
+@keyframes balloonFloat {
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translateY(-14px)
+            rotate(5deg);
+    }
+}
+
+/* =========================================================
+   PARTY HAT
+========================================================= */
+
+.party-hat {
+    position: absolute;
+
+    width: 88px;
+
+    top: 5%;
+    right: 4%;
+
+    z-index: 10;
+
+    transform: rotate(9deg);
+}
+
+.party-hat img {
+    filter:
+        drop-shadow(
+            0 10px 12px
+            rgba(5,45,100,.14)
+        );
+}
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.star {
+    position: absolute;
+
+    color: var(--gold);
+
+    font-size: 17px;
+
+    animation:
+        twinkle
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+.star.a {
+    top: 7%;
+    left: 8%;
+}
+
+.star.b {
+    top: 20%;
+    right: 5%;
+    animation-delay: .8s;
+}
+
+.star.c {
+    bottom: 12%;
+    left: 5%;
+    animation-delay: 1.4s;
+}
+
+.star.d {
+    bottom: 5%;
+    right: 11%;
+    animation-delay: .4s;
+}
+
+@keyframes twinkle {
+    0%,100% {
+        opacity: .25;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    text-align: center;
+
+    color: #8092aa;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: .85rem;
+
+    flex-shrink: 0;
+}
+
+.footer i {
+    color: var(--blue);
+    margin: 0 3px;
+}
+
+/* =========================================================
+   WISH MODAL
+========================================================= */
+
+.wish-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(3,16,42,.68);
+
+    backdrop-filter:
+        blur(15px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .4s ease,
+        visibility .4s ease;
+}
+
+.wish-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wish-card {
+    position: relative;
+
+    width: min(590px, 94vw);
+
+    max-height: 90vh;
+
+    overflow: hidden;
+
+    padding:
+        34px 30px 30px;
+
+    text-align: center;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eef8ff
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.95);
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,.3);
+
+    transform:
+        translateY(30px)
+        scale(.94);
+
+    transition:
+        transform .55s var(--ease);
+}
+
+.wish-modal.open .wish-card {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.wish-close {
+    position: absolute;
+
+    top: 13px;
+    right: 13px;
+
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        #edf6ff;
+
+    color: var(--navy);
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.wish-close:hover {
+    transform: rotate(90deg);
+    background: #dceeff;
+}
+
+.wish-kicker {
+    color: var(--blue);
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .8rem;
+}
+
+.wish-title {
+    margin-top: 4px;
+
+    color: var(--navy);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(
+            2.4rem,
+            6vw,
+            3.6rem
+        );
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   BEAUTIFUL CAKE
+========================================================= */
+
+.cake {
+    position: relative;
+
+    width: 175px;
+    height: 145px;
+
+    margin:
+        15px auto 10px;
+
+    filter:
+        drop-shadow(
+            0 15px 12px
+            rgba(23,105,224,.12)
+        );
+}
+
+.cake-layer {
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        13px 13px 20px 20px;
+}
+
+.cake-bottom {
+    bottom: 0;
+
+    width: 160px;
+    height: 50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #75baff,
+            #347fe2
+        );
+
+    box-shadow:
+        inset 0 -8px 0
+        rgba(0,0,0,.08);
+}
+
+.cake-bottom::after {
+    content: "♡  ♡  ♡";
+
+    position: absolute;
+
+    width: 100%;
+
+    bottom: 7px;
+    left: 0;
+
+    text-align: center;
+
+    color:
+        rgba(255,255,255,.8);
+
+    font-size: 13px;
+}
+
+.cake-middle {
+    bottom: 38px;
+
+    width: 142px;
+    height: 43px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #b9e0ff,
+            #6aaff3
+        );
+}
+
+.cake-middle::before {
+    content: "";
+
+    position: absolute;
+
+    top: -2px;
+    left: 9px;
+    right: 9px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+}
+
+.cake-top {
+    bottom: 73px;
+
+    width: 124px;
+    height: 39px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #e5f4ff
+        );
+
+    border-radius:
+        17px 17px 12px 12px;
+}
+
+.cake-top::before {
+    content: "";
+
+    position: absolute;
+
+    left: 11px;
+    right: 11px;
+    top: 9px;
+
+    height: 8px;
+
+    border-radius: 99px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #ff9fca 0 14px,
+            #ffd76a 14px 28px,
+            #65b4ff 28px 42px
+        );
+}
+
+.candle {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 106px;
+
+    width: 11px;
+    height: 30px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        5px 5px 2px 2px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #ffffff 0 5px,
+            #65aaf2 5px 10px
+        );
+}
+
+.flame {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 131px;
+
+    width: 15px;
+    height: 21px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 65%,
+            #fff 0 20%,
+            #ffd76a 21% 58%,
+            #ff9d3f 59% 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(255,183,58,.75)
+        );
+
+    animation:
+        flame
+        .7s
+        ease-in-out
+        infinite alternate;
+}
+
+@keyframes flame {
+    to {
+        transform:
+            translateX(-50%)
+            scale(1.13)
+            rotate(3deg);
+    }
+}
+
+/* =========================================================
+   WISH TEXT
+========================================================= */
+
+.wish-text {
+    max-width: 500px;
+
+    margin:
+        0 auto 17px;
+
+    color: #607998;
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .9rem;
+
+    line-height: 1.7;
+}
+
+.wish-input {
+    width: min(480px, 100%);
+
+    min-height: 90px;
+
+    resize: none;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid
+        #cfe4f8;
+
+    border-radius: 17px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,.9);
+
+    color: var(--text);
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .85rem;
+
+    transition:
+        border .25s ease,
+        box-shadow .25s ease;
+}
+
+.wish-input:focus {
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(23,105,224,.09);
+}
+
+.wish-input::placeholder {
+    color: #a2afbf;
+}
+
+.wish-send {
+    margin-top: 10px;
+
+    padding:
+        11px 21px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1769e0,
+            #4c9fff
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px
+        rgba(23,105,224,.2);
+
+    transition:
+        transform .25s ease;
+}
+
+.wish-send:hover {
+    transform: translateY(-3px);
+}
+
+.wish-result {
+    min-height: 24px;
+
+    margin-top: 12px;
+
+    color: var(--blue);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   LETTER MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(3,16,42,.74);
+
+    backdrop-filter:
+        blur(16px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .4s ease,
+        visibility .4s ease;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--navy);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.25);
+
+    z-index: 1005;
+
+    transition:
+        transform .25s ease;
+}
+
+.close:hover {
+    transform:
+        rotate(90deg)
+        scale(1.06);
+}
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter {
+    width: min(950px, 96vw);
+    height: min(650px, 88vh);
+
+    display: grid;
+
+    grid-template-columns:
+        .75fr
+        1.25fr;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 45px 120px
+        rgba(0,0,0,.35);
+
+    transform:
+        translateY(35px)
+        scale(.95);
+
+    transition:
+        transform .55s var(--ease);
+}
+
+.modal.open .letter {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+/* =========================================================
+   LETTER COVER
+========================================================= */
+
+.letter-cover {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255,255,255,.2),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #061735,
+            #0b3478 55%,
+            #1769e0
+        );
+}
+
+.cover-stars {
+    position: absolute;
+    inset: 0;
+
+    opacity: .25;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+}
+
+.letter-photo {
+    position: relative;
+    z-index: 2;
+
+    width: 135px;
+    height: 135px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #9ed3ff,
+            white
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.25);
+}
+
+.letter-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    transform: none !important;
+    animation: none !important;
+}
+
+.to {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 18px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.25rem;
+}
+
+.letter-cover h2 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 12px;
+
+    font-family:
+        "Titan One",
+        cursive;
+
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.cover-cute {
+    position: relative;
+    z-index: 2;
+
+    width: 105px;
+
+    margin-top: 15px;
+}
+
+.cover-caption {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 7px;
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .75rem;
+
+    color:
+        rgba(255,255,255,.78);
+}
+
+/* =========================================================
+   LETTER CONTENT
+========================================================= */
+
+.letter-content {
+    min-width: 0;
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding:
+        40px 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #f1f8ff
+        );
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(23,105,224,.45)
+        transparent;
+}
+
+.letter-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.letter-content::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            #1769e0,
+            #8acaff
+        );
+
+    border-radius: 999px;
+
+    border:
+        2px solid
+        transparent;
+
+    background-clip: padding-box;
+}
+
+.letter-content::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            #0b4fae,
+            #4e9fff
+        );
+
+    background-clip: padding-box;
+}
+
+.letter-inner {
+    width: 100%;
+    max-width: 570px;
+
+    margin: auto;
+}
+
+.letter-heading {
+    text-align: center;
+
+    margin-bottom: 23px;
+
+    color: var(--blue);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 2.4rem;
+}
+
+.letter-content p {
+    color: #536981;
+
+    font-family:
+        "Sriracha",
+        cursive;
+
+    font-size: .9rem;
+
+    line-height: 1.72;
+}
+
+.letter-content p + p {
+    margin-top: 12px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        #cfe4f8;
+}
+
+.divider i {
+    color: var(--gold);
+}
+
+.letter-cute {
+    width: 75px;
+
+    margin:
+        17px auto 0;
+}
+
+.letter-cute img {
+    width: 100%;
+}
+
+.signature {
+    margin-top: 12px;
+
+    padding-bottom: 20px;
+
+    text-align: right;
+
+    color: var(--navy);
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 8px;
+    height: 13px;
+
+    z-index: 2000;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall
+        3s
+        linear
+        forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================================================
+   HEART POP
+========================================================= */
+
+.pop-heart {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 3000;
+
+    color: var(--pink);
+
+    font-size: 20px;
+
+    animation:
+        heartPop
+        1.5s
+        ease-out
+        forwards;
+}
+
+@keyframes heartPop {
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.4);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.4)
+            rotate(20deg);
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .page {
+        padding:
+            18px 24px 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+
+        padding:
+            25px 0
+            5px;
+
+        overflow: hidden;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .kicker {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title-line {
+        justify-content: center;
+    }
+
+    .hero-message {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .birthday-date {
+        justify-content: center;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        height: 44vh;
+        min-height: 270px;
+    }
+
+    .photo-orbit {
+        width: min(390px, 52vw);
+    }
+
+    .photo-card {
+        width: min(310px, 42vw);
+    }
+
+    .balloon {
+        width: 75px;
+    }
+
+    .balloon.left {
+        left: 10%;
+    }
+
+    .balloon.right {
+        right: 10%;
+    }
+
+    .party-hat {
+        width: 72px;
+        right: 14%;
+    }
+
+    .letter {
+        height: min(650px, 90vh);
+    }
+
+    .letter-content {
+        padding:
+            32px 30px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding:
+            15px
+            14px
+            10px;
+    }
+
+    .brand {
+        font-size: 1rem;
+    }
+
+    .music-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hero {
+        padding:
+            25px 0
+            4px;
+
+        gap: 0;
+    }
+
+    .kicker {
+        font-size: .59rem;
+
+        padding:
+            6px 9px;
+
+        margin-bottom: 16px;
+    }
+
+    .kicker i {
+        font-size: .55rem;
+    }
+
+    .hero-title .happy {
+        font-size:
+            clamp(
+                3.1rem,
+                16vw,
+                4.5rem
+            );
+    }
+
+    .hero-title .birthday {
+        font-size:
+            clamp(
+                2.7rem,
+                13vw,
+                4rem
+            );
+    }
+
+    .title-line {
+        margin-top: 15px;
+    }
+
+    .title-line::before {
+        width: 45px;
+    }
+
+    .title-line span {
+        font-size: 13px;
+    }
+
+    .hero-message {
+        font-size: .98rem;
+
+        line-height: 1.4;
+
+        margin-top: 14px;
+    }
+
+    .birthday-date {
+        font-size: 1.2rem;
+
+        margin-top: 10px;
+    }
+
+    .actions {
+        margin-top: 16px;
+
+        gap: 10px;
+
+        justify-content: center;
+    }
+
+    .letter-button {
+        padding:
+            11px 15px;
+
+        font-size: .72rem;
+
+        gap: 8px;
+    }
+
+    .cake-button {
+        width: 46px;
+        height: 46px;
+
+        font-size: 1.35rem;
+    }
+
+    .cake-action-title {
+        font-size: 1rem;
+    }
+
+    .cake-action-small {
+        font-size: .55rem;
+    }
+
+    .hero-visual {
+        height: 43vh;
+
+        min-height: 255px;
+
+        margin-top: 2px;
+    }
+
+    .photo-orbit {
+        width: 300px;
+    }
+
+    .photo-card {
+        width: 245px;
+
+        padding:
+            10px
+            10px
+            15px;
+
+        border-radius: 23px;
+    }
+
+    .photo-frame {
+        border-radius: 17px;
+    }
+
+    .photo-name {
+        font-size: 1.25rem;
+    }
+
+    .photo-subtitle {
+        font-size: .55rem;
+    }
+
+    .photo-heart {
+        width: 31px;
+        height: 31px;
+
+        font-size: .75rem;
+    }
+
+    .balloon {
+        width: 60px;
+    }
+
+    .balloon.left {
+        left: 1%;
+        top: 17%;
+    }
+
+    .balloon.right {
+        right: 1%;
+        top: 27%;
+    }
+
+    .party-hat {
+        width: 60px;
+
+        top: 5%;
+        right: 3%;
+    }
+
+    .star {
+        font-size: 12px;
+    }
+
+    .footer {
+        font-size: .68rem;
+    }
+
+    .wish-card {
+        padding:
+            28px 17px 22px;
+
+        border-radius: 25px;
+    }
+
+    .wish-title {
+        font-size: 2.5rem;
+    }
+
+    .cake {
+        transform: scale(.82);
+
+        margin:
+            4px auto
+            -2px;
+    }
+
+    .wish-text {
+        font-size: .76rem;
+
+        line-height: 1.55;
+
+        margin-bottom: 12px;
+    }
+
+    .wish-input {
+        min-height: 75px;
+
+        font-size: .75rem;
+    }
+
+    .wish-send {
+        font-size: .75rem;
+
+        padding:
+            9px 17px;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+
+    .close {
+        top: 9px;
+        right: 9px;
+
+        width: 38px;
+        height: 38px;
+    }
+
+    .letter {
+        width: 100%;
+        height: 94vh;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 20px;
+
+        overflow: hidden;
+    }
+
+    .letter-cover {
+        min-height: 245px;
+
+        flex-shrink: 0;
+
+        padding:
+            18px;
+    }
+
+    .letter-photo {
+        width: 85px;
+        height: 85px;
+    }
+
+    .to {
+        margin-top: 9px;
+
+        font-size: .95rem;
+    }
+
+    .letter-cover h2 {
+        margin-top: 5px;
+
+        font-size: 1.5rem;
+    }
+
+    .cover-cute {
+        width: 62px;
+
+        margin-top: 5px;
+    }
+
+    .cover-caption {
+        font-size: .56rem;
+    }
+
+    .letter-content {
+        flex: 1;
+
+        min-height: 0;
+
+        padding:
+            22px 18px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        scroll-behavior: smooth;
+
+        scrollbar-width: thin;
+
+        scrollbar-color:
+            rgba(23,105,224,.45)
+            transparent;
+    }
+
+    .letter-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .letter-content::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .letter-content::-webkit-scrollbar-thumb {
+        background:
+            linear-gradient(
+                180deg,
+                #1769e0,
+                #8acaff
+            );
+
+        border-radius: 999px;
+    }
+
+    .letter-heading {
+        font-size: 1.8rem;
+
+        margin-bottom: 14px;
+    }
+
+    .letter-content p {
+        font-size: .72rem;
+
+        line-height: 1.58;
+    }
+
+    .letter-content p + p {
+        margin-top: 8px;
+    }
+
+    .divider {
+        margin: 13px 0;
+    }
+
+    .letter-cute {
+        width: 55px;
+
+        margin-top: 10px;
+    }
+
+    .signature {
+        margin-top: 7px;
+
+        padding-bottom: 25px;
+
+        font-size: 1.05rem;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .hero-title .happy {
+        font-size: 2.8rem;
+    }
+
+    .hero-title .birthday {
+        font-size: 2.45rem;
+    }
+
+    .hero-message {
+        font-size: .88rem;
+    }
+
+    .hero-visual {
+        height: 41vh;
+    }
+
+    .photo-card {
+        width: 220px;
+    }
+
+    .photo-orbit {
+        width: 270px;
+    }
+
+    .balloon {
+        width: 52px;
+    }
+
+    .cake-action-text {
+        display: none;
+    }
+
+    .letter-button {
+        padding:
+            10px 13px;
+    }
+
+    .wish-title {
+        font-size: 2.2rem;
+    }
+
+    .wish-card {
+        padding-top: 25px;
+    }
+
+    .letter-content {
+        padding:
+            20px 15px;
+    }
+
+    .letter-content p {
+        font-size: .69rem;
+
+        line-height: 1.55;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background" aria-hidden="true">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
+
+    <div class="background-dots"></div>
+
+</div>
+
+<div class="decor" aria-hidden="true">
+
+    <span>♡</span>
+    <span>✦</span>
+    <span>♡</span>
+    <span>✦</span>
+    <span>✧</span>
+
+</div>
+
+
+<!-- =========================================================
+     BIRTHDAY MUSIC
+========================================================= -->
+
+<audio
+    id="birthdayMusic"
+    loop
+    preload="auto">
+
+    <source
+        src="./birthday.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<!-- =========================================================
+     MAIN PAGE
+========================================================= -->
+
+<div class="page">
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <span class="brand-dot"></span>
+
+            <span>
+                For Neo Andrei 💙
+            </span>
+
+        </div>
+
+
+        <button
+            class="music-button"
+            id="musicButton"
+            type="button"
+            aria-label="Play birthday music">
+
+            <i class="fa-solid fa-volume-xmark"></i>
+
+        </button>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main class="hero">
+
+        <section class="hero-copy">
+
+            <div class="kicker">
+
+                <i class="fa-solid fa-sparkles"></i>
+
+                <span>
+                    A little surprise made especially for you
+                </span>
+
+                <i class="fa-solid fa-sparkles"></i>
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+                <span class="happy">
+                    Happy
+                </span>
+
+                <span class="birthday">
+                    Birthday
+                </span>
+
+            </h1>
+
+
+            <div class="title-line">
+
+                <span>✦</span>
+                <span>✦</span>
+                <span>✦</span>
+
+            </div>
+
+
+            <p class="hero-message">
+
+                You deserve a sky full of stars,
+                a heart full of peace,
+                and a life full of beautiful moments. 💙
+
+            </p>
+
+
+            <div class="birthday-date">
+
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    11 September
+                </span>
+
+                <i class="fa-solid fa-star"></i>
+
+            </div>
+
+
+            <div class="actions">
+
+                <button
+                    class="letter-button"
+                    id="openLetter"
+                    type="button">
+
+                    <span>
+                        Open Your Letter
+                    </span>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </button>
+
+
+                <div class="cake-action">
+
+                    <button
+                        class="cake-button"
+                        id="wishButton"
+                        type="button"
+                        aria-label="Open Make a Wish">
+
+                        🎂
+
+                    </button>
+
+
+                    <div class="cake-action-text">
+
+                        <span class="cake-action-title">
+                            Make a Wish
+                        </span>
+
+                        <span class="cake-action-small">
+                            Tap the cake ✨
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HERO VISUAL
+        ================================================== -->
+
+        <section class="hero-visual">
+
+            <div
+                class="photo-orbit"
+                aria-hidden="true">
+            </div>
+
+
+            <span class="star a">✦</span>
+            <span class="star b">✧</span>
+            <span class="star c">✦</span>
+            <span class="star d">✧</span>
+
+
+            <div
+                class="party-hat"
+                aria-hidden="true">
+
+                <img
+                    src="./images/hat.png"
+                    alt="">
+
+            </div>
+
+
+            <div
+                class="balloon left"
+                aria-hidden="true">
+
+                <img
+                    src="./images/balloon1.png"
+                    alt="">
+
+            </div>
+
+
+            <div
+                class="balloon right"
+                aria-hidden="true">
+
+                <img
+                    src="./images/balloon2.png"
+                    alt="">
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <div class="photo-frame">
+
+                    <img
+                        src="./images/hat2.png"
+                        alt="Mehwish">
+
+                </div>
+
+
+                <div class="photo-info">
+
+                    <div>
+
+                        <div class="photo-name">
+                            Dear Drei
+                        </div>
+
+                        <div class="photo-subtitle">
+                            Today is all about celebrating you ✨
+                        </div>
+
+                    </div>
+
+
+                    <div class="photo-heart">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        Made with
+
+        <i class="fa-solid fa-heart"></i>
+
+        just for you
+
+    </footer>
+
+</div>
+
+
+<!-- =========================================================
+     MAKE A WISH MODAL
+========================================================= -->
+
+<div
+    class="wish-modal"
+    id="wishModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="wishTitle"
+    aria-hidden="true">
+
+    <div class="wish-card">
+
+        <button
+            class="wish-close"
+            id="closeWish"
+            type="button"
+            aria-label="Close make a wish">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="wish-kicker">
+            ✨ One little moment just for you...
+        </div>
+
+
+        <h2
+            class="wish-title"
+            id="wishTitle">
+
+            Make a Wish 💙
+
+        </h2>
+
+
+        <div
+            class="cake"
+            aria-hidden="true">
+
+            <div class="cake-layer cake-bottom"></div>
+
+            <div class="cake-layer cake-middle"></div>
+
+            <div class="cake-layer cake-top"></div>
+
+            <div class="candle"></div>
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <p class="wish-text">
+
+            Close your eyes for a second,
+            make your sweetest wish,
+            and when you're ready,
+            blow out the candle. 🕯️✨
+
+        </p>
+
+
+        <textarea
+            class="wish-input"
+            id="wishInput"
+            placeholder="Write your birthday wish here... 💭"
+            maxlength="300"></textarea>
+
+
+        <br>
+
+
+        <button
+            class="wish-send"
+            id="wishSend"
+            type="button">
+
+            Keep My Wish ✨
+
+        </button>
+
+
+        <div
+            class="wish-result"
+            id="wishResult"
+            aria-live="polite">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LETTER MODAL
+========================================================= -->
+
+<div
+    class="modal"
+    id="letterModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="letterTitle"
+    aria-hidden="true">
+
+    <button
+        class="close"
+        id="closeLetter"
+        type="button"
+        aria-label="Close birthday letter">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <div class="letter">
+
+        <section class="letter-cover">
+
+            <div
+                class="cover-stars"
+                aria-hidden="true">
+            </div>
+
+
+            <div class="letter-photo">
+
+                <img
+                    src="./images/hat2.png"
+                    alt="Mehwish">
+
+            </div>
+
+
+            <div class="to">
+                To: Neo Andrei 💙
+            </div>
+
+
+            <h2 id="letterTitle">
+                Happy Birthday
+            </h2>
+
+
+            <div class="cover-cute">
+
+                <img
+                    src="./images/cute1.png"
+                    alt="">
+
+            </div>
+
+
+            <p class="cover-caption">
+                A little letter from the heart 💌
+            </p>
+
+        </section>
+
+
+        <section class="letter-content">
+
+            <div class="letter-inner">
+
+                <h3 class="letter-heading">
+                    To You! 💙
+                </h3>
+
+
+                <p>
+                    Happy birthday Drei 🥳🎂
+                </p>
+
+
+                <p>
+                    Drei, our friendship was unexpected but genuine,
+                    I wasn't expecting that it will last for a long time.
+                    But look how far our friendship have come.
+                </p>
+
+
+                <p>
+                    And now, you are truly one of the closest friend I have. 💙
+                </p>
+
+
+                <div class="divider">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+
+                <p>
+                    Thank you so much for being you and for letting me enter your world.
+Thank you for gifting me the honor of calling you my friend. I wish you all the best in life.
+I hope you know how wonderful you are not only as a friend but also as a human being.
+You're such a genuine person and I am lucky to have met you in my college life.
+I am so happy and blessed that I got the chance to experience the light and dark side of college life with you by my side.
+I don't regret any moments that we have shared, good or bad, happy or sad, calm or chaos, stress or victory, it doesn't matter because I've got a friend like you.
+With that I celebrate you today, words won't be enough to describe the memories we have made. Cheers to more and more.
+I am sorry too for all of my shortcomings as a friend, and I am sorry if I hurt you intentionally or unintentionally.
+I am sorry for the times that you have felt unappreciated by me.
+I want you to know that I didn't mean it and please accept my genuine apology.
+I also want you to know that even though I do say it much, if you ever need someone to talk to or someone to listen or someone to distract you from your own thoughts. I am here.
+You can lean on me when the voice inside your head gets too loud and the chaos around me gets too messy. You can rest beside me and I will stay with you even in the middle of silence.
+No explanation needed, no words needed. Even with just your silence, I will stay, no force, no judgment, just you're resting.
+I will be with you until you're ready to face the world again.
+I wish I could remove some of the pain from your life which you are bearing alone.
+But even though I can't do that, I am here whenever you need me.
+For now, enjoy your special day, I am celebrating you.
+                </p>
+
+
+                <p>
+                    You can talk to me anytime you want,
+                    especially about those things which you
+                    can't say to others.
+                </p>
+
+
+                <p>
+                    And this year, I hope all your dreams
+                    come true. ✨
+                </p>
+
+
+                <p>
+                    I am wishing you a very Happy Birthday Drei! 🎈🎂
+                </p>
+
+
+                <p>
+                    I hope you're doing well.
+                </p>
+
+
+                <p>
+                    Be happy. 😌💙
+                    Always keep smiling. ❤️
+                </p>
+
+
+                <p>
+                    "Remeber, alwayse wear your sweetest smile."
+                </p>
+
+
+                <div class="divider">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+
+                <div class="letter-cute">
+
+                    <img
+                        src="./images/cute2.png"
+                        alt="">
+
+                </div>
+
+
+                <div class="signature">
+                    Chel 14 💙
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   BIRTHDAY WEBSITE
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       ELEMENTS
+    ====================================================== */
+
+    const openButton =
+        document.getElementById("openLetter");
+
+    const closeButton =
+        document.getElementById("closeLetter");
+
+    const modal =
+        document.getElementById("letterModal");
+
+    const musicButton =
+        document.getElementById("musicButton");
+
+    const music =
+        document.getElementById("birthdayMusic");
+
+
+    /* =====================================================
+       WISH ELEMENTS
+    ====================================================== */
+
+    const wishButton =
+        document.getElementById("wishButton");
+
+    const wishModal =
+        document.getElementById("wishModal");
+
+    const closeWish =
+        document.getElementById("closeWish");
+
+    const wishInput =
+        document.getElementById("wishInput");
+
+    const wishSend =
+        document.getElementById("wishSend");
+
+    const wishResult =
+        document.getElementById("wishResult");
+
+
+    /* =====================================================
+       LETTER
+    ====================================================== */
+
+    function openLetter() {
+
+        modal.classList.add("open");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "modal-open"
+        );
+
+        createConfetti();
+
+        setTimeout(() => {
+
+            closeButton.focus();
+
+        }, 300);
+    }
+
+
+    function closeLetter() {
+
+        modal.classList.remove("open");
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "modal-open"
+        );
+
+        openButton.focus();
+    }
+
+
+    openButton.addEventListener(
+        "click",
+        openLetter
+    );
+
+
+    closeButton.addEventListener(
+        "click",
+        closeLetter
+    );
+
+
+    modal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === modal
+            ) {
+                closeLetter();
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       WISH MODAL
+    ====================================================== */
+
+    function openWish() {
+
+        wishModal.classList.add("open");
+
+        wishModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "modal-open"
+        );
+
+        createHearts(wishButton);
+
+        setTimeout(() => {
+
+            wishInput.focus();
+
+        }, 450);
+    }
+
+
+    function closeWishModal() {
+
+        wishModal.classList.remove("open");
+
+        wishModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "modal-open"
+        );
+
+        wishButton.focus();
+    }
+
+
+    wishButton.addEventListener(
+        "click",
+        openWish
+    );
+
+
+    closeWish.addEventListener(
+        "click",
+        closeWishModal
+    );
+
+
+    wishModal.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === wishModal
+            ) {
+
+                closeWishModal();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+
+            if (
+                modal.classList.contains("open")
+            ) {
+
+                closeLetter();
+
+            }
+
+
+            if (
+                wishModal.classList.contains("open")
+            ) {
+
+                closeWishModal();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       CONFETTI
+    ====================================================== */
+
+    function createConfetti() {
+
+        const colors = [
+            "#1769e0",
+            "#3f91ff",
+            "#82c4ff",
+            "#ffd76a",
+            "#ffffff",
+            "#ff9fca"
+        ];
+
+        const amount =
+            window.innerWidth < 600
+                ? 40
+                : 70;
+
+
+        for (
+            let i = 0;
+            i < amount;
+            i++
+        ) {
+
+            const piece =
+                document.createElement("span");
+
+            piece.className =
+                "confetti";
+
+
+            piece.style.left =
+                Math.random() * 100 + "vw";
+
+
+            piece.style.background =
+                colors[
+                    Math.floor(
+                        Math.random() *
+                        colors.length
+                    )
+                ];
+
+
+            piece.style.width =
+                5 + Math.random() * 7 + "px";
+
+
+            piece.style.height =
+                8 + Math.random() * 10 + "px";
+
+
+            piece.style.animationDelay =
+                Math.random() * .7 + "s";
+
+
+            piece.style.borderRadius =
+                Math.random() > .5
+                    ? "50%"
+                    : "2px";
+
+
+            document.body.appendChild(
+                piece
+            );
+
+
+            setTimeout(() => {
+
+                piece.remove();
+
+            }, 3500);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MUSIC — AUTOPLAY
+    ====================================================== */
+
+    let playing = false;
+
+
+    function updateMusicButton() {
+
+        if (playing) {
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Pause birthday music"
+            );
+
+            musicButton.innerHTML =
+                '<i class="fa-solid fa-volume-high"></i>';
+
+        } else {
+
+            musicButton.classList.remove(
+                "playing"
+            );
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Play birthday music"
+            );
+
+            musicButton.innerHTML =
+                '<i class="fa-solid fa-volume-xmark"></i>';
+
+        }
+
+    }
+
+
+    async function startBirthdayMusic() {
+
+        if (playing) {
+            return true;
+        }
+
+
+        try {
+
+            music.volume = 0.7;
+
+            await music.play();
+
+            playing = true;
+
+            updateMusicButton();
+
+            return true;
+
+        } catch (error) {
+
+            console.log(
+                "Autoplay was blocked. Waiting for user interaction.",
+                error
+            );
+
+            playing = false;
+
+            updateMusicButton();
+
+            return false;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       MUSIC BUTTON — PLAY / PAUSE
+    ====================================================== */
+
+    musicButton.addEventListener(
+        "click",
+        async () => {
+
+            try {
+
+                if (!playing) {
+
+                    music.volume = 0.7;
+
+                    await music.play();
+
+                    playing = true;
+
+                    updateMusicButton();
+
+                } else {
+
+                    music.pause();
+
+                    playing = false;
+
+                    updateMusicButton();
+
+                }
+
+            } catch (error) {
+
+                console.log(
+                    "Music could not be played.",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       AUTOPLAY
+    ====================================================== */
+
+    startBirthdayMusic();
+
+
+    /* =====================================================
+       FALLBACK FOR BROWSERS THAT BLOCK AUTOPLAY
+    ====================================================== */
+
+    let interactionStarted = false;
+
+
+    async function startMusicAfterInteraction() {
+
+        if (
+            playing ||
+            interactionStarted
+        ) {
+            return;
+        }
+
+
+        interactionStarted = true;
+
+
+        try {
+
+            music.volume = 0.7;
+
+            await music.play();
+
+            playing = true;
+
+            updateMusicButton();
+
+        } catch (error) {
+
+            console.log(
+                "Music could not be started after interaction.",
+                error
+            );
+
+            interactionStarted = false;
+
+        }
+
+    }
+
+
+    document.addEventListener(
+        "click",
+        startMusicAfterInteraction,
+        {
+            once: true
+        }
+    );
+
+
+    document.addEventListener(
+        "touchstart",
+        startMusicAfterInteraction,
+        {
+            once: true,
+            passive: true
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        startMusicAfterInteraction,
+        {
+            once: true
+        }
+    );
+
+
+    /* =====================================================
+       MUSIC EVENTS
+    ====================================================== */
+
+    music.addEventListener(
+        "play",
+        () => {
+
+            playing = true;
+
+            updateMusicButton();
+
+        }
+    );
+
+
+    music.addEventListener(
+        "pause",
+        () => {
+
+            playing = false;
+
+            updateMusicButton();
+
+        }
+    );
+
+
+    /* =====================================================
+       KEEP WISH
+    ====================================================== */
+
+    wishSend.addEventListener(
+        "click",
+        () => {
+
+            const wish =
+                wishInput.value.trim();
+
+
+            if (!wish) {
+
+                wishResult.textContent =
+                    "Make a little wish first 💙";
+
+                wishInput.focus();
+
+                return;
+            }
+
+
+            wishResult.textContent =
+                "Your wish is safe here forever. ✨💙";
+
+
+            wishInput.value = "";
+
+
+            createConfetti();
+
+            createHearts(
+                wishSend
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       HEART EFFECT
+    ====================================================== */
+
+    function createHearts(element) {
+
+        const rect =
+            element.getBoundingClientRect();
+
+
+        for (
+            let i = 0;
+            i < 9;
+            i++
+        ) {
+
+            const heart =
+                document.createElement("span");
+
+            heart.className =
+                "pop-heart";
+
+            heart.textContent =
+                Math.random() > .5
+                    ? "♥"
+                    : "♡";
+
+
+            heart.style.left =
+                rect.left +
+                rect.width / 2 +
+                "px";
+
+
+            heart.style.top =
+                rect.top +
+                rect.height / 2 +
+                "px";
+
+
+            heart.style.setProperty(
+                "--x",
+                (
+                    Math.random() * 150 - 75
+                ) + "px"
+            );
+
+
+            heart.style.setProperty(
+                "--y",
+                (
+                    Math.random() * -150 - 40
+                ) + "px"
+            );
+
+
+            heart.style.animationDelay =
+                Math.random() * .2 + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 1700);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       IMAGE FALLBACK
+    ====================================================== */
+
+    document
+        .querySelectorAll("img")
+        .forEach(img => {
+
+            img.addEventListener(
+                "error",
+                () => {
+
+                    img.style.opacity = "0";
+
+                },
+                {
+                    once: true
+                }
+            );
+
+        });
+
+});
+
+</script>
+
+</body>
+</html>
